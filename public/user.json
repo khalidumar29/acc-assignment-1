@@ -72,7 +72,7 @@
     "photoUrl": "https://i.ibb.co/nCZyqBp/images-2.jpg"
   },
   {
-    "id": 11,
+    "id": 10,
     "name": "Carl C. Binder",
     "gender": "male",
     "contact": "951-260-3575",
@@ -80,7 +80,7 @@
     "photoUrl": "https://i.ibb.co/QnMXpGD/images-1.jpg"
   },
   {
-    "id": 12,
+    "id": 11,
     "name": "Monica C. Sampson",
     "gender": "female",
     "contact": "504-254-1034",
@@ -88,7 +88,7 @@
     "photoUrl": "https://i.ibb.co/wYRhWMF/download.jpg"
   },
   {
-    "id": 13,
+    "id": 12,
     "name": "Judson T. Thomas",
     "gender": "male",
     "contact": "860-843-0930",

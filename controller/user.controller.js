@@ -32,9 +32,11 @@ module.exports.saveUser = (req, res) => {
 
 module.exports.updateUser = (req, res) => {
   const id = req.params.id;
+  const numId = parseInt(id);
   const updateUser = req.body;
   const findUser = data.find((user) => user.id === Number(id));
-  if (findUser) {
+
+  if (findUser && numId === Number(id)) {
     findUser.name = updateUser.name;
 
     findUser.gender = updateUser.gender;
@@ -44,7 +46,37 @@ module.exports.updateUser = (req, res) => {
     findUser.contact = updateUser.contact;
 
     findUser.photoUrl = updateUser.photoUrl;
+    res.status(200).json(findUser);
+  } else if (numId !== Number) {
+    res.status(404).json({
+      message: "plese send number as id ",
+    });
+  } else {
+    res.status(404).json({
+      message: "user not found",
+    });
   }
+};
 
-  res.status(200).json(findUser);
+module.exports.deleteUser = (req, res) => {
+  const id = req.params.id;
+  const numId = parseInt(id);
+  const findUser = data.find((user) => user.id === Number(id));
+  console.log(findUser);
+  if (findUser && numId === Number(id)) {
+    const index = data.indexOf(findUser);
+    data.splice(index, 1);
+    res.status(200).json({
+      message: "user deleted",
+      user: findUser,
+    });
+  } else if (numId !== Number(id)) {
+    res.status(404).json({
+      message: "plese send number as id ",
+    });
+  } else {
+    res.status(404).json({
+      message: "user not found",
+    });
+  }
 };
