@@ -11,7 +11,7 @@ app.use(express.json());
 
 /** server  running status*/
 app.use("/", rootRoute);
-app.use("/user/random", userRoute);
+app.use("/user", userRoute);
 
 app.listen(port, () => {
   console.log(`server is running on port ${port}`);
